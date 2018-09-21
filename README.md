@@ -72,7 +72,7 @@ Has minimum estimator error, and is independent of drift and open gaps. It van b
 
 1. [ Volatility and its Measurements](https://www.eurexchange.com/blob/116048/47ca53f0178cec31caeecdf94cc18f6e/data/volatility_and_its_measurements.pdf.pdf)
 
-2. [ Drift Independent Volatility Estimation Based on High, Low, Open and Close Price](ftp://ftp.ams.sunysb.edu/papers/2000/susb00_25.pdf)
+2. [ Drift Independent Volatility Estimation Based on High, Low, Open and Close Price](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.628.4037&rep=rep1&type=pdf)
 
 3. [volatility function | R Documentation](https://www.rdocumentation.org/packages/TTR/versions/0.23-3/topics/volatility)
 
