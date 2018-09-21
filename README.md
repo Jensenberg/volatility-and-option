@@ -2,22 +2,14 @@
 计算波动率的六种方法：
 
 Volatility | Price Information
-
 -------------|------------------------
-
 Realized|Close 
-
 Parkinson|High，Low
-
 Garman-Klass| Open, High, Low, Close
-
 Roger-Satchell | Open, High, Low, Close
-
 Garman-Klass-Yang-zhang | Open, High, Low, Close
-
 Yang-Zhang | Open, High, Low, Close
-
-##1. Realized Volatility: Close-Close
+## 1. Realized Volatility: Close-Close
 
 $\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$   
 
