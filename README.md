@@ -12,6 +12,8 @@
 
 后五种方法均采用了连续收益率，导致波动率被低估
 
+## 中证500指数的计算结果
+![中证500指数的波动率](https://github.com/Jensenberg/volatility/blob/master/vlols.png)
 ## 1. Realized Volatility: Close-Close
 
 $\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$   
@@ -67,6 +69,7 @@ $\sigma_{rs}^2 = \sigma_{roger-satchel}^2$
 $k^* = \frac {\alpha} {1+ \alpha + \frac{n+1}{n-1}},    \alpha$通常为0.34
 
 Has minimum estimator error, and is independent of drift and open gaps. It van be interpreted as a weighted average of the Roger-Satchell estimator, the Close-Open Volatility and the Open-Close Volatility.
+
 
 ### Reference：
 
