@@ -10,7 +10,7 @@
 | Garman-Klass-Yang-Zhang | Open, High, Low, Close |
 | Yang-Zhang              | Open, High, Low, Close |
 
-后面五种方法均采用了连续收益率，导致波动率被低估
+后五种方法均采用了连续收益率，导致波动率被低估
 
 ## 1. Realized Volatility: Close-Close
 
