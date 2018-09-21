@@ -2,12 +2,12 @@
 计算波动率的六种方法：
 
 Volatility | Price Information
--------------|------------------------
+------------------|-------------------------------
 Realized|Close 
 Parkinson|High，Low
 Garman-Klass| Open, High, Low, Close
 Roger-Satchell | Open, High, Low, Close
-Garman-Klass-Yang-zhang | Open, High, Low, Close
+Garman-Klass-Yang-Zhang | Open, High, Low, Close
 Yang-Zhang | Open, High, Low, Close
 ## 1. Realized Volatility: Close-Close
 
