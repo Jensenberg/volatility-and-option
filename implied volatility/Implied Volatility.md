@@ -28,10 +28,10 @@
 
 由于没有中证指数相关的期权，所以只能采用后两种方法计算隐含波动率
 
-![第二种方法]()
+![第二种方法](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/implied%20volatility.png)
 
 可以看到M的选择对于结果有很大的影响；
 
-![第三种方法]()
+![第三种方法](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/hedged%20implied%20volatility.png)
 
 由于仅仅是每日进行对冲，对冲频率不高，且delta-中性只能对冲一阶的价格变化，所以对冲成本存在一定的误差，从而使得波动率曲线不是很光滑。
