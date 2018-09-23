@@ -12,11 +12,11 @@
 
 后五种方法均采用了连续收益率，导致波动率被低估
 
-![中证500指数的波动率]()
+![中证500指数的波动率](github.com/Jensenberg/volatility-and-Option/blob/master/data/vlols.png)
 
 Parkinson，Garman-Klass，Roger-Satchell都是只用到当日的价格信息，可以看做是日内波动率；
 
-realized，Garman-Klass-Yang-Zhang，Yang-Zhang都用到了前一日和当日的价格信息，可以看做是日间波动率，从图上来看，前三者得到的波动率明显小于后三者得到波动率。 
+Realized，Garman-Klass-Yang-Zhang，Yang-Zhang都用到了前一日和当日的价格信息，可以看做是日间波动率，从图上来看，前三者得到的波动率明显小于后三者得到波动率。 
 
 ## 1. Realized Volatility: Close-Close
 
