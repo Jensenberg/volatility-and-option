@@ -12,8 +12,6 @@
 
 后五种方法均采用了连续收益率，导致波动率被低估
 
-## 中证500指数的计算结果
-![中证500指数的波动率](https://github.com/Jensenberg/volatility/blob/master/vlols.png)
 ## 1. Realized Volatility: Close-Close
 
 $\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$   
