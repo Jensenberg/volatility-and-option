@@ -22,7 +22,7 @@ Realized，Garman-Klass-Yang-Zhang，Yang-Zhang都用到了前一日和当日的
 
 ## 1. Realized Volatility: Close-Close
 
-$\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$   
+$$\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$$   
 
  $r_t =\log\frac{C_t}{C_{t-1}}$：收益率
 
