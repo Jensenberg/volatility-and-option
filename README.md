@@ -12,7 +12,7 @@
 
 后五种方法均采用了连续收益率，导致波动率被低估
 
-![中证500指数的波动率]()
+![中证500指数的波动率](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/vlols.png)
 
 Parkinson，Garman-Klass，Roger-Satchell都是只用到当日的价格信息，可以看做是日内波动率；
 
