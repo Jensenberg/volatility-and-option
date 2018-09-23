@@ -24,13 +24,13 @@ Realized，Garman-Klass-Yang-Zhang，Yang-Zhang都用到了前一日和当日的
 
 $$\sigma_{realized} = \sqrt{  \frac{N}{n-2} \sum\limits_{i=1} ^{n-1} (r_t - \bar r)^2  }$$   
 
- $r_t =\log\frac{C_t}{C_{t-1}}$：收益率
+$r_t =\log\frac{C_t}{C_{t-1}}$：收益率
 
 $ \bar r =\frac{1}{n} \sum\limits_{n}^{t=1}r_t$：平均收益率
 
 ## 2. Parkinson Volatility: High-Low Volatility
 
-$\sigma_{parkinson} = \sqrt{ { \frac{1}{4*\ln{2}} * \frac{252}{n} * \sum\limits_{t=1}^{n} {\ln{(\frac{H_t}{L_t})}}^2}}$
+$$\sigma_{parkinson} = \sqrt{ { \frac{1}{4*\ln{2}} * \frac{252}{n} * \sum\limits_{t=1}^{n} {\ln{(\frac{H_t}{L_t})}}^2}}$$
 
 一般的波动率只考虑了收盘价，Parkinson Volatility 将最高价和最低价纳入了考虑范围，underestimate
 
@@ -38,7 +38,7 @@ $\sigma_{parkinson} = \sqrt{ { \frac{1}{4*\ln{2}} * \frac{252}{n} * \sum\limits_
 
 Assumes Brown motion with zero drift and no opening jumps.
 
-$\sigma_{garman-klass} = \sqrt{\frac{N}{n} \sum\limits_{i=1}^{N} \lbrack {\frac{1}{2} * (\log{\frac{H_i}{L_i}})^2 -(2*\log2 -1) * (\log\frac{C_i}{O_i})^2\rbrack}}$
+$$\sigma_{garman-klass} = \sqrt{\frac{N}{n} \sum\limits_{i=1}^{N} \lbrack {\frac{1}{2} * (\log{\frac{H_i}{L_i}})^2 -(2*\log2 -1) * (\log\frac{C_i}{O_i})^2\rbrack}}$$
 
 相比于Parkinson Volatility进一步考虑了开盘价和收盘价，纳入了更多的价格信息， underestimate
 
@@ -46,7 +46,7 @@ $\sigma_{garman-klass} = \sqrt{\frac{N}{n} \sum\limits_{i=1}^{N} \lbrack {\frac{
 
 Assumes for non-zero drift, but assumed no opening jump. 
 
-$\sigma_{roger-satchel} = \sqrt{ \frac{N}{n} \sum\limits_{i=1}^{n} \lbrack \log \frac{H_i}{L_i} * \log \frac{H_i}{O_i} + \log \frac{HL_i}{L_i} * \log \frac{L_i}{O_i} \rbrack }$
+$$\sigma_{roger-satchel} = \sqrt{ \frac{N}{n} \sum\limits_{i=1}^{n} \lbrack \log \frac{H_i}{L_i} * \log \frac{H_i}{O_i} + \log \frac{HL_i}{L_i} * \log \frac{L_i}{O_i} \rbrack }$$
 
 underestimate
 
@@ -54,13 +54,13 @@ underestimate
 
 A modified version of Garman-Klass estimator that allows for opening jumps.
 
-$\sigma_{garkla-yangzh} = \sqrt { \frac{N}{n} \sum\limits_{i=1}^{n} \lbrack (\log \frac{O_i}{C_{i-1}})^2 +  {\frac{1}{2} * (\log{\frac{H_i}{L_i}})^2 -(2*\log2 -1) * (\log\frac{C_i}{O_i})^2}\rbrack }$
+$$\sigma_{garkla-yangzh} = \sqrt { \frac{N}{n} \sum\limits_{i=1}^{n} \lbrack (\log \frac{O_i}{C_{i-1}})^2 +  {\frac{1}{2} * (\log{\frac{H_i}{L_i}})^2 -(2*\log2 -1) * (\log\frac{C_i}{O_i})^2}\rbrack }$$
 
 当资产收益率均不为零时，会高估波动率
 
 ## 6. Yang-Zhang Volatility: OHLC Volatility 
 
-$\sigma_{yang-zhang} = \sqrt {\sigma_o^2 + k * \sigma_c^2 + (1-k) * \sigma_{rs}^2}$
+$$\sigma_{yang-zhang} = \sqrt {\sigma_o^2 + k * \sigma_c^2 + (1-k) * \sigma_{rs}^2}$$
 
 $\mu_o = \frac{1}{n} \sum\limits_{i=1}^{n} \log \frac {O_i}{C_{i-1}}$
 
