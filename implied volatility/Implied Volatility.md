@@ -6,11 +6,11 @@
 
    在历史上每一天都考虑一个期限为T的期权，计算T期后的收益，折合成期初价格指数的百分比，相当于一个期初价格为1，期末价格为$\frac{S_T}{S_0}$的期权，对于一个平价$(K=S_0)$)的欧式看涨期权，期末的损益（Profit & Loss)为：
 
-   $\begin{equation} pl =  \begin{cases} {\frac {S_T}{K} - 1} & S_T \geqslant K \\ 0 & S_T < K  \end{cases} \end{equation}$
+   $\begin{equation} pl =  \begin{cases} {\frac {S_T}{K} - 1} & S_T \geq K \\ 0 & S_T < K  \end{cases} \end{equation}$
 
    滚动计算M个期权，M应取一个较大值，如M=1000，就可以得到M个$pl$，相当于蒙特卡洛模拟下的M个路径的$pl$，所有损益的平均值就可以看成是期权价格的近似：
 
-   $Call \thickapprox PL = \frac{1}{M} \sum\limits_{i=1}^{M} {pl}_i$
+   $Call \approx PL = \frac{1}{M} \sum\limits_{i=1}^{M} {pl}_i$
 
    将得到的期权价格的近似代入B-S公式，反解即可得到隐含波动率。
 
