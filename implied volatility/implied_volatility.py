@@ -173,14 +173,24 @@ if __name__ == '__main__':
     shibor = pd.read_excel('E:/Alpha/shibor_3M.xlsx', index_col='date')
 
     close = zz500['close']
+    # 以第一种方法计算的隐含波动率
     # 在rolling_implied函数中设置M=600, 1200, 2000可以得到大不相同的结果
-    iv = pd.Series(rolling_implied(close, shibor)) # 以第一种方法计算的隐含波动率
+    iv_600 = pd.Series(rolling_implied(close, shibor, M=600))
+    iv_1200 = pd.Series(rolling_implied(close, shibor, M=1200))
+    iv_2000 = pd.Series(rolling_implied(close, shibor, M=2000))
+    iv = pd.concat([iv_600, iv_1200, iv_2000], axis=1)
+    iv.columns = ['iv(M=600)', 'iv(M=1200)', 'iv(M=2000)']
     plt.figure()
-    iv.plot(figsize=(15, 8))
-    plt.savefig('implied volatility(1200).png', bbox_inches='tight')
+    iv.plot(figsize=(15, 8), fontsize=14)
+    plt.xticks(rotation=0)
+    plt.title('Implied Volatility, zz500', fontsize=16)
+    plt.legend(fontsize='14')
+    plt.savefig('implied volatility.png', bbox_inches='tight')
     
     # 在rolling_hedge中设置N=20, 50, 100，耗时和得到的结果均只是略有差异
     iv_hedge = pd.Series(rolling_hedge(close, shibor)) # 对冲隐含波动率
     plt.figure()
-    iv_hedge.plot(figsize=(15, 8))
+    iv_hedge.plot(figsize=(15, 8), fontsize=14)
+    plt.title('Hedged Implied Volatility', fontsize=16)
+    plt.xticks(rotation=0)
     plt.savefig('hedged implied volatility.png', bbox_inches='tight')

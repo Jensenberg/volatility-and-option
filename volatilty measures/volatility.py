@@ -28,7 +28,7 @@ def parkinson(high, low, N=240):
 
 def garman_klass(open, high, low, close, N=240):
     '''
-    计算Garman-Klass波动率，利用了开、高、低、收四种价格信息
+    计算Garman-Klass波动率，利用了开、高、低、收四种价格信息，假定四种价格序列是等长的，下同
     '''
     sum_hl = sum(log(H_t / L_t) ** 2 for H_t, L_t in zip(high, low)) / 2
     sum_co = sum(log(C_t / O_t) ** 2 
@@ -104,14 +104,16 @@ def volatility(model, open=None, high=None, low=None, close=None, N=240):
 def rolling_volatility(model, window, open=None, high=None, low=None, 
                        close=None, N=240, **kwargs):
     '''
-    计算滚动窗口的波动率
+    计算滚动窗口的波动率，为了可比性，每种方法的收益率观测值数量等于窗口长度，从而同样窗口下
+    每种方法需要的交易日数略有区别
     Parameters:
         model:
             使用的模型
         window：
             设定的窗口期长度
     Returns:
-        返回一个以日期为键，波动率为值的字典
+        vol:
+            dict, 返回一个以日期为键，波动率为值的字典
     '''
     vol = {}        
     if model == 'realized':
@@ -153,41 +155,43 @@ def rolling_volatility(model, window, open=None, high=None, low=None,
 if __name__ == '__main__':
     import pandas as pd
     import matplotlib.pyplot as plt
-    zz500 = pd.read_excel('e:/alpha/zz500.xlsx') # 2005.01 - 2018.09的中证500交易数据
+    
+    zz500 = pd.read_excel('e:/alpha/zz500.xlsx') 
     zz500.set_index(pd.to_datetime(zz500['date']), inplace=True)
     test = zz500[:60]
     
-    t_open = test['open']; t_high = test['high']
-    t_low = test['low']; t_close = test['close']
-    print(volatility('realized', close=t_close))
-    print(volatility('parkinson', high=t_high[1:], low=t_low[1:]))
-    print(volatility('garman_klass', t_open[1:], t_high[1:], 
-                     t_low[1:], t_close[1:]))
-    print(volatility('roger_satchell', t_open[1:], t_high[1:],
-                     t_low[1:], t_close[1:]))
-    print(volatility('garkla_yangzh', t_open, t_high, t_low, t_close))
-    print(volatility('yang_zhang', t_open, t_high, t_low, t_close))
+    models = ['realized', 'parkinson', 'garman_klass', 'roger_satchell',
+              'garkla_yangzh', 'yang_zhang']
+    
+    kwargs = {'open': test['open'], 'high': test['high'],
+              'low': test['low'], 'close': test['close']}
+#    限定了交易日数，收益率的观测数量存在一定不同
+    for model in models:
+        print(volatility(model, **kwargs))
     
     kw = {'open': zz500['open'], 'high': zz500['high'], 
           'low': zz500 ['low'], 'close': zz500['close']}
-    models = ['realized', 'parkinson', 'garman_klass', 'roger_satchell',
-              'garkla_yangzh', 'yang_zhang']
     window = 60
     vols = {}
     for model in models:
         vols[model] = pd.Series(rolling_volatility(model, window, **kw))
     vols = pd.DataFrame(vols)
-    
-    plt.figure(figsize=(15, 8))
+
+    fig, axes = plt.subplots(1, 2 , figsize=(16, 8), 
+                             sharex=True, sharey=True)
     xz = range(len(vols))
 #    xn = vols.index.strftime('%Y-%m')
-    for column in vols.columns:
-        plt.plot(xz, vols[column], label=column)
-    plt.legend()
+    for column in ['parkinson', 'garman_klass', 'roger_satchell']:
+        axes[0].plot(xz, vols[column], label=column)# 仅利用了当日的价格信息
+    axes[0].legend(fontsize='large')
+    for column in ['realized', 'garkla_yangzh', 'yang_zhang']:
+        axes[1].plot(xz, vols[column], label=column) # 利用了前一日和当日的价格信息
+    axes[1].legend(fontsize='large')
+    plt.subplots_adjust(wspace=0.02)
     plt.xlim(0, len(vols)+1)
     days = vols.index.year.value_counts().sort_index().cumsum()
-    plt.xticks(days, days.index[1:]) #在每年年初标记刻度
+    plt.xticks(days, days.index[1:])#在每年年初标记刻度
 #    plt.xticks(xz[::240], xn[::240]) # 从开始日期起每隔一年标记一次刻度
-
-    
+    fig.suptitle('Volatility Measurements', fontsize=16, y=0.92)
+    plt.savefig('vlolatilities.png', bbox_inches='tight')
     
