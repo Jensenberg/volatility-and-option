@@ -71,3 +71,8 @@ $$利息支付期数 = 期权存续期数 - 存在敲入的月份数$$
 
 从上图可以看出，凤凰期权的价格对于波动率和期限，都是单调的，波动率越大，价格越高；期限越长，价格也越高。
 对于delta值，则只是对期限有一般的单调性，对于波动则不是单调的。
+
+#### References
+
+1. [Phoenix Autocallable - UBS-KeyInvest](https://keyinvest-ch-en.ubs.com/filedb/deliver/xuuid/g001d709d9add4664b38bec4c8aef6902c5a/name/DE000UT3S9N3_Termsheet_en.pdf)
+2. [Pricing Supplment -- UBS Phoenix Autocall - SEC.gov](https://www.sec.gov/Archives/edgar/data/312070/000119312513387400/d605844d424b2.htm)
