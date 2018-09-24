@@ -19,3 +19,7 @@
 ## implied volatility
 
 构造一个期权，利用实盘价格作为路径，以Monte-Carlo模拟和期权动态对冲为基础，计算中证500指数的隐含波动率；
+
+## phoenix autocall
+
+对凤凰期权进行定价，计算delta值
