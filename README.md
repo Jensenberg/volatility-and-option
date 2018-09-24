@@ -3,11 +3,17 @@
 计算波动率的六种方法：
 
 (1) Realized 
+
 (2) Parkinson 
+
 (3) Garman-Klass 
+
 (4) Roger-Satchell
+
 (5) Garman-Klass -Yang-Zhang
+
 (6) Yang-Zhang
+
 以2005.01-2018.09的中证500指数的OHLC数据，进行了测试
 
 ## implied volatility
