@@ -22,7 +22,7 @@ $$利息支付期数 = 期权存续期数 - 存在敲入的月份数$$
 
 第2个观测点（第40天）向上敲出，没有敲入，支付利息3.0
 
-![路径图1](**https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_1.png)
+![路径图1](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_1.png)
 
 第3个观测点（第60天）向上敲出，没有敲入，支付利息4.5
 
