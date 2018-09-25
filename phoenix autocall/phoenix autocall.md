@@ -74,9 +74,6 @@ $$利息支付期数 = 期权存续期数 - 存在敲入的月份数$$
 
 <<<<<<< HEAD
 ## References
-=======
-### References
->>>>>>> 2e7217a38d610054cad1c7c4809daa889f6b32f3
 
 1. [Phoenix Autocallable - UBS-KeyInvest](https://keyinvest-ch-en.ubs.com/filedb/deliver/xuuid/g001d709d9add4664b38bec4c8aef6902c5a/name/DE000UT3S9N3_Termsheet_en.pdf)
 2. [Pricing Supplment -- UBS Phoenix Autocall - SEC.gov](https://www.sec.gov/Archives/edgar/data/312070/000119312513387400/d605844d424b2.htm)
