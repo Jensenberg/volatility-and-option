@@ -14,7 +14,7 @@
 
 ## 中证500指数的波动率的计算结果如下图所示
 
-![中证500指数的波动率](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/vlolatilities.png)
+![中证500指数的波动率](E:/Github/volatility-and-option/data/vlolatilities.png)
 
 Parkinson，Garman-Klass，Roger-Satchell都是只用到当日的价格信息，可以看做是日内波动率；
 
@@ -76,8 +76,7 @@ $k^* = \frac {\alpha} {1+ \alpha + \frac{n+1}{n-1}},    \alpha$通常为0.34
 
 Has minimum estimator error, and is independent of drift and open gaps. It van be interpreted as a weighted average of the Roger-Satchell estimator, the Close-Open Volatility and the Open-Close Volatility.
 
-
-### Reference：
+## References
 
 1. [ Volatility and its Measurements](https://www.eurexchange.com/blob/116048/47ca53f0178cec31caeecdf94cc18f6e/data/volatility_and_its_measurements.pdf.pdf)
 
