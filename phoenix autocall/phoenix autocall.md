@@ -18,23 +18,23 @@ $$利息支付期数 = 期权存续期数 - 存在敲入的月份数$$
 
 资本利得则取决于是否敲入看跌，以及看跌存续到期末，且期末价格小于期初价格，才能形成正收益。
 
-![路径图](E:/github/volatility-and-option/data/phoenix_path_0.png)
+![路径图](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_0.png)
 
 第2个观测点（第40天）向上敲出，没有敲入，支付利息3.0
 
-![路径图1](E:/github/volatility-and-option/data/phoenix_path_1.png)
+![路径图1](**https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_1.png)
 
 第3个观测点（第60天）向上敲出，没有敲入，支付利息4.5
 
-![路径图2](E:/github/volatility-and-option/data/phoenix_path_2.png)
+![路径图2](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_2.png)
 
 第1个观测点（第20天）向上敲出，没有敲入，支付利息1.5
 
-![路径图3](E:/github/volatility-and-option/data/phoenix_path_3.png)
+![路径图3](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_3.png)
 
 没有敲入和敲出，支付利息4.5
 
-![路径图4](E:/github/volatility-and-option/data/phoenix_path_4.png)
+![路径图4](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_path_4.png)
 
 没有敲出，第3个月内敲入了一个看跌期权，支付利息3.0，期末价格约为97元，获得资本利得3.0（100-97）
 
@@ -67,7 +67,7 @@ $$利息支付期数 = 期权存续期数 - 存在敲入的月份数$$
 
 
 
-![价格与delta](E:/github/volatility-and-option/data/phoenix_values_deltas.png)
+![价格与delta](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/phoenix_values_deltas.png)
 
 从上图可以看出，凤凰期权的价格对于波动率和期限，都是单调的，波动率越大，价格越高；期限越长，价格也越高。
 对于delta值，则只是对期限有一般的单调性，对于波动则不是单调的。

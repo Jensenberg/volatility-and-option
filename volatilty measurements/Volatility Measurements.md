@@ -14,7 +14,7 @@
 
 ## 中证500指数的波动率的计算结果如下图所示
 
-![中证500指数的波动率](E:/Github/volatility-and-option/data/vlolatilities.png)
+![中证500指数的波动率](https://github.com/Jensenberg/volatility-and-Option/blob/master/data/vlolatilities.png)
 
 Parkinson，Garman-Klass，Roger-Satchell都是只用到当日的价格信息，可以看做是日内波动率；
 
