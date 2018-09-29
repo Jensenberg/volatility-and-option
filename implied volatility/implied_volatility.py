@@ -91,9 +91,9 @@ def rolling_implied(close, shibor, sigma=0.5, S0=1, K=1, T=0.25, days=240,
     for i in range(C - M - n):
         close_i = close[i: M + n + i]
         date = close_i.index[0]
-        try:
-            r = shibor[date]
-        except:
+        if date in shibor.index:
+            r = shibor.loc[date, 'shibor_3M']
+        else:
             r = 0.03
         iv[date] = implied(close_i, r, sigma, S0, K, T, days, M, N)
     return iv
@@ -130,9 +130,9 @@ def equation(sigma, close=None, shibor=None, T=0.25):
     '''
     S0 = K = close[0]
     date = close.index[0]
-    try:
-        r = shibor[date]
-    except:
+    if date in shibor.index:
+        r = shibor.loc[date, 'shibor_3M']
+    else:
         r = 0.03
     value = bs_value(S0, K, T, r, sigma)
     price = hedge_cost(close, r, sigma)
@@ -168,9 +168,9 @@ if __name__ == '__main__':
     import pandas as pd
     import matplotlib.pyplot as plt
     
-    zz500 = pd.read_excel('e:/alpha/zz500.xlsx')
+    zz500 = pd.read_excel('e:/data/zz500.xlsx')
     zz500.set_index(pd.to_datetime(zz500['date']), inplace=True)
-    shibor = pd.read_excel('E:/Alpha/shibor_3M.xlsx', index_col='date')
+    shibor = pd.read_excel('E:/data/shibor_3M.xlsx', index_col='date')
 
     close = zz500['close']
     # 以第一种方法计算的隐含波动率

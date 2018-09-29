@@ -5,8 +5,11 @@ Created on Sun Sep 23 20:47:07 2018
 @author: 54326
 """
 
+## 可以先不计算delta，以节约时间
+
 from random import uniform
 from math import sqrt, log, cos, pi
+from collections import defaultdict
 import numpy as np
 
 def std_norm(n):
@@ -125,16 +128,14 @@ def phoenix(S0, sigmas, ns, upper, lower, coupon, r=0.04, M=50000, days=20):
     Returns:
         两个字典构成的元组，字典以波动率、期限为键，值分别为价格和delta值
     '''
-    values = {}
-    deltas = {}
+    values = defaultdict(dict)
+    deltas = defaultdict(dict)
     for n in ns:
-        values[n] = {}
-        deltas[n] = {}
         for sigma in sigmas:
             paths = mc_paths(S0, sigma, n, r, M, days)
-            values[n][sigma] = phoenix_value(paths, n, upper, lower, coupon)
-            deltas[n][sigma] = phoenix_delta(paths, n, upper, lower, coupon)
-    return values, deltas 
+            values[n].update({sigma: phoenix_value(paths, n, upper, lower, coupon)})
+            deltas[n].update({sigma: phoenix_delta(paths, n, upper, lower, coupon)})
+    return values, deltas
     
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
