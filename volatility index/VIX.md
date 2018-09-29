@@ -16,7 +16,7 @@
 3. 对波动率依次按看涨期权与看跌期权的平均、执行价价格价差加权平均和剩余到期期限三次加权平均；
 4. 最后即得到VIX指数；
 
-![VIX_old](E:\GitHub\volatility-and-option\data\VIX_old.png)
+![VIX_old](https://github.com/Jensenberg/volatility-and-option/blob/master/data/VIX_old.png)
 
 ## VIX_new.py
 
@@ -28,7 +28,7 @@ $VIX = 100 * \sqrt{\{T_1 \sigma^2[\frac {{NT}_2 - N_{30}}{{NT}_2 - {NT}_1}] + T_
 
 参数详细解释见参考文献
 
-![VIX_new](E:\GitHub\volatility-and-option\data\VIX_new.png)
+![VIX_new](https://github.com/Jensenberg/volatility-and-option/blob/master/data/VIX_new.png)
 
 ## 参考文献
 
