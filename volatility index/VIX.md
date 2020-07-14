@@ -24,7 +24,9 @@
 
 $\sigma^2 = \frac{2} {T}  \sum\limits_i \frac{\Delta K_i}{K_i^2} Q(K_i) - \frac{1}{T} (\frac{F} {K_0} - 1)^2$
 
-$VIX = 100 * \sqrt{\{T_1 \sigma^2[\frac {{NT}_2 - N_{30}}{{NT}_2 - {NT}_1}] + T_2 \sigma^2 [\frac { N_{30} - {NT}_1}{{NT}_2 - {NT}_1}]\} * \frac{N_{365}} {N_{30}} }$
+$VIX = 100 * \sqrt{{T_1 \sigma^2[\frac {{NT}_2 - N*{30}}{{NT}_2 - {NT}_1}] + T_2 \sigma^2 [\frac { N*{30} - {NT}_1}{{NT}_2 - {NT}_1}]} * \frac{N*{365}} {N*{30}} }$
+
+$VIX = 100 * \sqrt{\{T_1 \sigma^2[\frac{{NT}_2 - N_{30}}{{NT}_2 - {NT}_1}] + T_2 \sigma^2 [\frac { N_{30} - {NT}_1}{{NT}_2 - {NT}_1}]\} * \frac{N_{365}} {N_{30}} }$
 
 参数详细解释见参考文献
 
